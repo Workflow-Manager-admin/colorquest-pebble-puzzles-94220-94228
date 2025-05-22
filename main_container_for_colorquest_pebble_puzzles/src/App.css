@@ -365,6 +365,15 @@ body {
   color: white;
   font-weight: bold;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.footer-btn:hover {
+  transform: translateY(-2px);
+  background-color: #3BB8B0;
 }
 
 .sound-toggle {
@@ -376,8 +385,15 @@ body {
 .sound-btn {
   background: none;
   border: none;
-  font-size: 1.5rem;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s;
+}
+
+.sound-btn:hover {
+  transform: scale(1.1);
 }
 
 /* Responsive adjustments */
