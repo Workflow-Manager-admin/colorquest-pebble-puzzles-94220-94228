@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Icons from './Icons';
 import PuzzleBoard from './PuzzleBoard';
+import HelpModal from './HelpModal';
 
 /**
  * ColorQuestMainContainer - Main container component for the ColorQuest Pebble Puzzles game.
