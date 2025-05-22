@@ -198,30 +198,47 @@ body {
 .puzzle-placeholder {
   text-align: center;
   color: var(--colorquest-text);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
 }
 
 .puzzle-placeholder p {
   font-size: 1.5rem;
-  margin-bottom: 20px;
+  margin: 10px 0;
 }
 
 .pebble-container {
   display: flex;
   gap: 15px;
   justify-content: center;
+  margin-top: 10px;
 }
 
-.pebble {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  box-shadow: var(--shadow-playful);
+/* Animation for pebbles */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
 }
 
-.pebble-red { background-color: var(--colorquest-primary); }
-.pebble-blue { background-color: var(--colorquest-secondary); }
-.pebble-yellow { background-color: var(--colorquest-accent1); }
-.pebble-green { background-color: var(--colorquest-accent3); }
+.pebble-container .icon {
+  filter: drop-shadow(0px 5px 5px rgba(0, 0, 0, 0.2));
+  transition: transform 0.2s;
+  animation: float 3s ease-in-out infinite;
+}
+
+.pebble-container .icon:nth-child(1) { animation-delay: 0s; }
+.pebble-container .icon:nth-child(2) { animation-delay: 0.2s; }
+.pebble-container .icon:nth-child(3) { animation-delay: 0.4s; }
+.pebble-container .icon:nth-child(4) { animation-delay: 0.6s; }
+.pebble-container .icon:nth-child(5) { animation-delay: 0.8s; }
+
+.pebble-container .icon:hover {
+  transform: scale(1.2);
+  cursor: pointer;
+}
 
 .game-controls {
   display: flex;
