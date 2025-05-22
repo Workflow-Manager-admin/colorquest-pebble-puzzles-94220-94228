@@ -87,14 +87,41 @@ const PuzzleBoard = ({ gameStarted, onLevelComplete }) => {
       pattern[1][1] = 2; // Yellow
       pattern[2][2] = 2; // Yellow
       return pattern;
+    } else if (level === 10) {
+      // Level 10: Specific pattern that requires exactly 5 pebbles (one of each color)
+      const pattern = Array(ROWS).fill().map(() => Array(COLS).fill(null));
+      pattern[0][0] = 0; // Red
+      pattern[0][2] = 1; // Blue
+      pattern[1][1] = 2; // Yellow
+      pattern[2][0] = 3; // Green
+      pattern[2][2] = 4; // Purple
+      return pattern;
     } else {
-      // Random pattern for higher levels
+      // Random pattern for higher levels (3-9, 11+)
       const pattern = Array(ROWS).fill().map(() => Array(COLS).fill(null));
       
-      // Place random pebbles on about 5 spots
-      for (let i = 0; i < 5; i++) {
-        const row = Math.floor(Math.random() * ROWS);
-        const col = Math.floor(Math.random() * COLS);
+      // Calculate maximum pebbles based on level - more difficult at higher levels
+      // but never more than what's available
+      const maxPebbles = level >= 10 ? 5 : Math.min(5, level);
+      
+      // Track which cells already have pebbles
+      const filledCells = new Set();
+      
+      // Place random pebbles
+      for (let i = 0; i < maxPebbles; i++) {
+        let row, col, cellKey;
+        
+        // Find an empty cell
+        do {
+          row = Math.floor(Math.random() * ROWS);
+          col = Math.floor(Math.random() * COLS);
+          cellKey = `${row},${col}`;
+        } while (filledCells.has(cellKey));
+        
+        // Mark this cell as filled
+        filledCells.add(cellKey);
+        
+        // Assign a random color
         const colorIndex = Math.floor(Math.random() * 5); // 5 colors
         pattern[row][col] = colorIndex;
       }
