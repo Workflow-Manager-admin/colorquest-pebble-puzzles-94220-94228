@@ -85,19 +85,12 @@ const ColorQuestMainContainer = () => {
       <div className="color-quest-content">
         <div className="game-area">
           <div className="puzzle-area">
-            {/* Puzzle area with kid-themed elements */}
-            <div className="puzzle-placeholder">
-              <Icons.PuzzlePiece width={60} height={60} />
-              <p>Puzzle area will go here!</p>
-              <div className="pebble-container">
-                <Icons.PebbleRed width={50} height={50} />
-                <Icons.PebbleBlue width={50} height={50} />
-                <Icons.PebbleYellow width={50} height={50} />
-                <Icons.PebbleGreen width={50} height={50} />
-                <Icons.PebblePurple width={50} height={50} />
-              </div>
-            </div>
+            <PuzzleBoard
+              gameStarted={gameStarted}
+              onLevelComplete={handleLevelComplete}
+            />
           </div>
+=======
 
           <div className="game-controls">
             <button className="control-btn btn-start">
