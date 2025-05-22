@@ -157,6 +157,9 @@ const ColorQuestMainContainer = () => {
           </button>
         </div>
       </div>
+      
+      {/* Help Modal */}
+      <HelpModal isOpen={isHelpOpen} onClose={toggleHelpModal} />
     </div>
   );
 };
