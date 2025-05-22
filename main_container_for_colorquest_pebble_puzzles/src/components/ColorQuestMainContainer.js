@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Icons from './Icons';
+import PuzzleBoard from './PuzzleBoard';
 
 /**
  * ColorQuestMainContainer - Main container component for the ColorQuest Pebble Puzzles game.
@@ -8,10 +9,67 @@ import Icons from './Icons';
 const ColorQuestMainContainer = () => {
   // State to track sound toggle
   const [soundOn, setSoundOn] = useState(true);
+  
+  // State to track if game has started
+  const [gameStarted, setGameStarted] = useState(false);
+  
+  // State to track current level
+  const [currentLevel, setCurrentLevel] = useState(1);
+  
+  // State to track achievements
+  const [achievements, setAchievements] = useState({
+    firstPuzzle: false,
+    colorMaster: false,
+    pebblePro: false
+  });
+  
+  // State to track progress percentage (0-100)
+  const [progress, setProgress] = useState(0);
 
   // Toggle sound state
   const toggleSound = () => {
     setSoundOn(!soundOn);
+  };
+  
+  // Start a new game
+  const handleStartGame = () => {
+    setGameStarted(true);
+  };
+  
+  // Handle level completion
+  const handleLevelComplete = (level) => {
+    // Update the progress bar
+    setProgress(Math.min((level / 5) * 100, 100));
+    
+    // Update achievements
+    const updatedAchievements = { ...achievements };
+    
+    if (level === 1) {
+      updatedAchievements.firstPuzzle = true;
+    }
+    
+    if (level === 3) {
+      updatedAchievements.colorMaster = true;
+    }
+    
+    if (level === 5) {
+      updatedAchievements.pebblePro = true;
+    }
+    
+    setAchievements(updatedAchievements);
+    setCurrentLevel(level + 1);
+  };
+  
+  // Reset the game
+  const handleReset = () => {
+    setGameStarted(false);
+    setCurrentLevel(1);
+    setProgress(0);
+    setAchievements({
+      firstPuzzle: false,
+      colorMaster: false,
+      pebblePro: false
+    });
   };
 
   return (
