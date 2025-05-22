@@ -255,6 +255,9 @@ body {
   cursor: pointer;
   transition: transform 0.2s, box-shadow 0.2s;
   box-shadow: var(--shadow-playful);
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .control-btn:hover {
@@ -270,6 +273,16 @@ body {
 .btn-help {
   background-color: var(--colorquest-accent2);
   color: white;
+}
+
+/* Adding a subtle bounce animation to buttons */
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+.control-btn:active {
+  animation: bounce 0.3s ease-in-out;
 }
 
 .sidebar {
