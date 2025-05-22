@@ -1,0 +1,7 @@
+<svg width="30" height="30" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
+  <!-- Gear -->
+  <circle cx="15" cy="15" r="4" fill="#4ECDC4" stroke="#333333" stroke-width="1.5"/>
+  <path d="M15,7 L15,5 M15,25 L15,23 M23,15 L25,15 M7,15 L5,15 M21,9 L22.5,7.5 M9,21 L7.5,22.5 M21,21 L22.5,22.5 M9,9 L7.5,7.5" 
+        stroke="#333333" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="15" cy="15" r="8" fill="none" stroke="#333333" stroke-width="1.5" stroke-dasharray="2"/>
+</svg>
