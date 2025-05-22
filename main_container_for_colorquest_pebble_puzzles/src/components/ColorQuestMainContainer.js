@@ -93,13 +93,20 @@ const ColorQuestMainContainer = () => {
 =======
 
           <div className="game-controls">
-            <button className="control-btn btn-start">
-              <Icons.PlayButton width={30} height={30} /> Start Game
+            <button 
+              className="control-btn btn-start" 
+              onClick={gameStarted ? handleReset : handleStartGame}
+            >
+              {gameStarted ? 
+                <><Icons.Settings width={30} height={30} /> Reset Game</> : 
+                <><Icons.PlayButton width={30} height={30} /> Start Game</>
+              }
             </button>
             <button className="control-btn btn-help">
               <Icons.HelpButton width={30} height={30} /> Help
             </button>
           </div>
+=======
         </div>
 
         <div className="sidebar">
