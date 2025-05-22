@@ -124,3 +124,240 @@ body {
   padding: 12px 24px;
   font-size: 1.1rem;
 }
+
+/* ColorQuest Main Container Styles */
+.color-quest-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background-color: var(--colorquest-background);
+  background-image: radial-gradient(var(--colorquest-accent1) 2px, transparent 2px);
+  background-size: 40px 40px;
+}
+
+.color-quest-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: var(--colorquest-primary);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-playful);
+  margin-bottom: 24px;
+}
+
+.color-quest-title {
+  font-size: 2.5rem;
+  color: white;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+.mascot-placeholder {
+  font-size: 3rem;
+  background-color: var(--colorquest-accent1);
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-playful);
+}
+
+.color-quest-content {
+  display: flex;
+  flex: 1;
+  gap: 24px;
+}
+
+.game-area {
+  flex: 3;
+  background-color: white;
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-playful);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.puzzle-area {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 4px dashed var(--colorquest-accent1);
+  border-radius: var(--border-radius-md);
+  margin-bottom: 20px;
+  min-height: 400px;
+}
+
+.puzzle-placeholder {
+  text-align: center;
+  color: var(--colorquest-text);
+}
+
+.puzzle-placeholder p {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.pebble-container {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.pebble {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  box-shadow: var(--shadow-playful);
+}
+
+.pebble-red { background-color: var(--colorquest-primary); }
+.pebble-blue { background-color: var(--colorquest-secondary); }
+.pebble-yellow { background-color: var(--colorquest-accent1); }
+.pebble-green { background-color: var(--colorquest-accent3); }
+
+.game-controls {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.control-btn {
+  padding: 14px 28px;
+  font-size: 1.3rem;
+  border-radius: var(--border-radius-md);
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: var(--shadow-playful);
+}
+
+.control-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.btn-start {
+  background-color: var(--colorquest-accent3);
+  color: white;
+}
+
+.btn-help {
+  background-color: var(--colorquest-accent2);
+  color: white;
+}
+
+.sidebar {
+  flex: 1;
+  background-color: white;
+  border-radius: var(--border-radius-lg);
+  padding: 20px;
+  box-shadow: var(--shadow-playful);
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.level-indicator h3, .achievements h3 {
+  font-size: 1.4rem;
+  color: var(--colorquest-accent2);
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.progress-bar {
+  height: 20px;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress {
+  height: 100%;
+  background-color: var(--colorquest-accent3);
+  border-radius: 10px;
+}
+
+.achievement-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.achievement-item {
+  padding: 12px 16px;
+  background-color: var(--colorquest-accent1);
+  border-radius: var(--border-radius-sm);
+  margin-bottom: 10px;
+  color: var(--colorquest-text);
+  font-weight: bold;
+}
+
+.achievement-item.locked {
+  background-color: #f0f0f0;
+  color: #999;
+}
+
+.color-quest-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: white;
+  border-radius: var(--border-radius-lg);
+  margin-top: 24px;
+  box-shadow: var(--shadow-playful);
+}
+
+.footer-btn {
+  padding: 10px 20px;
+  border-radius: var(--border-radius-sm);
+  border: none;
+  background-color: var(--colorquest-secondary);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.sound-toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sound-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .color-quest-content {
+    flex-direction: column;
+  }
+  
+  .color-quest-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+  
+  .color-quest-title {
+    font-size: 2rem;
+  }
+  
+  .puzzle-area {
+    min-height: 300px;
+  }
+}
