@@ -269,3 +269,4 @@ src/components/PuzzleBoard.js
   Line 47:6:  React Hook useEffect has a missing dependency: 'initializeLevel'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
 
 webpack compiled with 1 warning
+Compiling...
