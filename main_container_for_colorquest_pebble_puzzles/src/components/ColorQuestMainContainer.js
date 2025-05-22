@@ -111,7 +111,7 @@ const ColorQuestMainContainer = () => {
                 <><Icons.PlayButton width={30} height={30} /> Start Game</>
               }
             </button>
-            <button className="control-btn btn-help">
+            <button className="control-btn btn-help" onClick={toggleHelpModal}>
               <Icons.HelpButton width={30} height={30} /> Help
             </button>
           </div>
