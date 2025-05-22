@@ -111,9 +111,9 @@ const ColorQuestMainContainer = () => {
 
         <div className="sidebar">
           <div className="level-indicator">
-            <h3>Level 1</h3>
+            <h3>Level {currentLevel}</h3>
             <div className="progress-bar">
-              <div className="progress" style={{width: '20%'}}></div>
+              <div className="progress" style={{width: `${progress}%`}}></div>
             </div>
           </div>
 
@@ -122,17 +122,18 @@ const ColorQuestMainContainer = () => {
               <Icons.Trophy width={24} height={24} /> Achievements
             </h3>
             <ul className="achievement-list">
-              <li className="achievement-item">
+              <li className={`achievement-item ${achievements.firstPuzzle ? '' : 'locked'}`}>
                 <Icons.Star width={20} height={20} /> First Puzzle
               </li>
-              <li className="achievement-item locked">
+              <li className={`achievement-item ${achievements.colorMaster ? '' : 'locked'}`}>
                 <Icons.Star width={20} height={20} /> Color Master
               </li>
-              <li className="achievement-item locked">
+              <li className={`achievement-item ${achievements.pebblePro ? '' : 'locked'}`}>
                 <Icons.Star width={20} height={20} /> Pebble Pro
               </li>
             </ul>
           </div>
+=======
         </div>
       </div>
 
