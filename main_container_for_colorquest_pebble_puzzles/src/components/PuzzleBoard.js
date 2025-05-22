@@ -118,14 +118,23 @@ const PuzzleBoard = ({ gameStarted, onLevelComplete }) => {
       return [
         { color: 2, count: 3 } // 3 yellow pebbles
       ];
-    } else {
-      // Higher levels: Mix of all colors
+    } else if (level >= 10) {
+      // Level 10 and above: Provide more pebbles to ensure completion
       return [
-        { color: 0, count: 2 }, // red
-        { color: 1, count: 2 }, // blue
-        { color: 2, count: 2 }, // yellow
-        { color: 3, count: 2 }, // green 
-        { color: 4, count: 2 }  // purple
+        { color: 0, count: 5 }, // red
+        { color: 1, count: 5 }, // blue
+        { color: 2, count: 5 }, // yellow
+        { color: 3, count: 5 }, // green 
+        { color: 4, count: 5 }  // purple
+      ];
+    } else {
+      // Higher levels (3-9): Mix of all colors
+      return [
+        { color: 0, count: 3 }, // red
+        { color: 1, count: 3 }, // blue
+        { color: 2, count: 3 }, // yellow
+        { color: 3, count: 3 }, // green 
+        { color: 4, count: 3 }  // purple
       ];
     }
   };
