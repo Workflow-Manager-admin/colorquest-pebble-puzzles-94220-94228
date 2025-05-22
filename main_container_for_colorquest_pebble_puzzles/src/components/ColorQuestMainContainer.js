@@ -26,10 +26,18 @@ const ColorQuestMainContainer = () => {
   
   // State to track progress percentage (0-100)
   const [progress, setProgress] = useState(0);
+  
+  // State to track if help modal is open
+  const [isHelpOpen, setIsHelpOpen] = useState(false);
 
   // Toggle sound state
   const toggleSound = () => {
     setSoundOn(!soundOn);
+  };
+  
+  // Toggle help modal
+  const toggleHelpModal = () => {
+    setIsHelpOpen(!isHelpOpen);
   };
   
   // Start a new game
